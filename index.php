@@ -7,7 +7,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 $servername = "mysql";
 $username = "root";
 $password = "password";
-$dbname = "docker";
+$dbname = "newdatabase";
 $name=$_POST["name"];
 $phone=$_POST["phone"];
 // Create connection
