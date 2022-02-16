@@ -2,8 +2,8 @@ pipeline{
     agent any
     environment{
         IMAGE_NAME ='devopstrainer/java-mvn-privaterepos:php$BUILD_NUMBER'
-        DEV_SERVER_IP ='ec2-user@13.126.50.89'
-        TEST_SERVER_IP ='ec2-user@13.126.50.89'
+        DEV_SERVER_IP ='ec2-user@3.110.223.109'
+        TEST_SERVER_IP ='ec2-user@3.110.124.214'
     }
     stages{
     stage('BUILD DOCKER IMAGE ON DEV_SERVER'){
