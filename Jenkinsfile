@@ -2,10 +2,11 @@ pipeline{
     agent any
     environment{
         IMAGE_NAME ='devopstrainer/java-mvn-privaterepos:php$BUILD_NUMBER'
-        SERVER_IP ='ec2-user@13.126.50.89'
+        DEV_SERVER_IP ='ec2-user@13.126.50.89'
+        TEST_SERVER_IP ='ec2-user@13.126.50.89'
     }
     stages{
-        stage('Build docker image'){
+        stage('Build docker image and run docker-compose'){
             agent any
              steps{
                 script{
