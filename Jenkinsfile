@@ -13,9 +13,9 @@ pipeline{
     echo "Building the docker image"
     sh "scp -o StrictHostKeyChecking=no docker-script.sh ec2-user@172.31.33.78:/home/ec2-user"
     sh "ssh -o StrictHostKeyChecking=no ec2-user@172.31.33.78 'bash ~/docker-script.sh'"
-    sh "ssh ec2-user@172.31.33.78 sudo docker build -t ${IMAGE_NAME} /home/ec2-user/php-1"
-    sh "ssh ec2-user@172.31.33.78 sudo docker login -u $USERNAME -p $PASSWORD"
-    sh "ssh ec2-user@172.31.33.78 sudo docker push ${IMAGE_NAME}"
+    sh "ssh ec2-user@65.0.135.30 sudo docker build -t ${IMAGE_NAME} /home/ec2-user/php-1"
+    sh "ssh ec2-user@65.0.135.30 sudo docker login -u $USERNAME -p $PASSWORD"
+    sh "ssh ec2-user@65.0.135.30 sudo docker push ${IMAGE_NAME}"
                  }
             }
         }
