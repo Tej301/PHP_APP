@@ -9,7 +9,7 @@ pipeline{
     stage('BUILD DOCKER IMAGE ON DEV_SERVER'){
         steps{
             script{
-    sshagent(['DEV_SERVER_KEY']) { 
+    sshagent(['DEPLOY_SERVER']) { 
     withCredentials([usernamePassword(credentialsId: 'docker-hub', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
     echo "BUILDING THE DOCKER IMAGE"
     sh "scp -o StrictHostKeyChecking=no -r docker-files ${DEV_SERVER_IP}:/home/ec2-user"
@@ -25,7 +25,7 @@ pipeline{
     stage('RUN PHP_APP ON TEST_SERVER'){
     steps{
         script{
-    sshagent(['TEST_SERVER_KEY']) { 
+    sshagent(['DEPLOY_SERVER']) { 
     withCredentials([usernamePassword(credentialsId: 'docker-hub', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
     echo "Building the docker image"
     sh "scp -o StrictHostKeyChecking=no -r docker-files ${TEST_SERVER_IP}:/home/ec2-user"
