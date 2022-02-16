@@ -18,7 +18,7 @@ pipeline{
     sh "ssh ${SERVER_IP} sudo docker login -u $USERNAME -p $PASSWORD"
     sh "ssh ${SERVER_IP} sudo docker push ${IMAGE_NAME}"
     sh "ssh ${SERVER_IP} 'bash ~/docker-files/docker-compose-script.sh ${IMAGE_NAME}'"
-    
+      
                  }
             }
         }
