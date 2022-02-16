@@ -2,7 +2,7 @@ pipeline{
     agent any
     environment{
         IMAGE_NAME ='devopstrainer/java-mvn-privaterepos:php$BUILD_NUMBER'
-        SERVER_IP ='ec2-user@65.0.135.30'
+        SERVER_IP ='ec2-user@13.126.50.89'
     }
     stages{
         stage('Build docker image'){
