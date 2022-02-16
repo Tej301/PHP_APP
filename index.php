@@ -34,4 +34,8 @@ $conn->close();
                 <input type="submit" name="submit">
         </form>
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> f1a8a1580a364f3da359b4b28c8391f7aab4804a
